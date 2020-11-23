@@ -1,6 +1,13 @@
 .item{
-    text-align: center;
+
+    display: flex;
+
+  align-items: center;
+
+
     border: 1px solid lightgray;
     width: 500px;
     background-color: chartreuse;
+    margin: auto;
+    padding: 0.5rem;
 }
