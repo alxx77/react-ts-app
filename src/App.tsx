@@ -51,9 +51,7 @@ function App() {
             }
           }
           if (item) {
-            return (
-              <Item key={item.id} todo={item} />
-            );
+            return <Item key={item.id} todo={item} />;
           }
         })}
       </AppContext.Provider>
