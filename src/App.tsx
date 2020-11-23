@@ -23,7 +23,7 @@ export const AppContext: React.Context<ICTX | null> = createContext<ICTX | null>
 );
 
 function App() {
-  const [inputText, setInputText] = useState("aaaaaaaa");
+  const [inputText, setInputText] = useState("");
   const [todos, setTodos] = useState<ITodo[]>([]);
   const [selection, setSelection] = useState("all");
 
@@ -41,19 +41,23 @@ function App() {
       <AppContext.Provider value={p}>
         <h1 className="app__header">ToDO...</h1>
         <Form />
-        {todos.map((el) => {
-          let item: ITodo | null = null;
-          if (selection === "all") {
-            item = el;
-          } else {
-            if (el.completed === (selection === "completed" ? true : false)) {
+        <div className="todo-container">
+          <ul className="todo-list">
+          {todos.map((el) => {
+            let item: ITodo | null = null;
+            if (selection === "all") {
               item = el;
+            } else {
+              if (el.completed === (selection === "completed" ? true : false)) {
+                item = el;
+              }
             }
-          }
-          if (item) {
-            return <Item key={item.id} todo={item} />;
-          }
-        })}
+            if (item) {
+              return <Item key={item.id} todo={item} />;
+            }
+          })}
+          </ul>
+        </div>
       </AppContext.Provider>
     </div>
   );

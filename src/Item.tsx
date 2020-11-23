@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import "./Item.css";
+
 import { AppContext, ITodo } from "./App";
 
 function Item({ todo }: { todo: ITodo }) {
@@ -20,7 +20,7 @@ function Item({ todo }: { todo: ITodo }) {
   };
 
   return (
-    <div className="item">
+    <div className="todo">
       <li className={`todo-item  ${todo.completed ? "completed" : ""}`}>
         {todo.text}
       </li>

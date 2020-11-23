@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-//import { IAppContext } from "./App"
 import { AppContext} from "./App";
 
 function Form() {
@@ -34,8 +33,9 @@ function Form() {
         value={ctx.inputText}
         onChange={inputTextChangedHandler}
         type="text"
+        className="todo-input"
       />
-      <button onClick={buttonOnClickHandler} type="submit">
+      <button onClick={buttonOnClickHandler} className="todo-button" type="submit">
         <i className="fas fa-plus-square"></i>
       </button>
       <div className="select">
